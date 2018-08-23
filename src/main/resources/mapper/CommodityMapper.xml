@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cote.mapper.CommodityMapper" >
+  <resultMap id="BaseResultMap" type="cn.cote.pojo.Commodity" >
+    <id column="commodity_id" property="commodityId" jdbcType="INTEGER" />
+    <result column="commodity_img" property="commodityImg" jdbcType="VARCHAR" />
+    <result column="commodity_name" property="commodityName" jdbcType="VARCHAR" />
+    <result column="commodity_prives" property="commodityPrives" jdbcType="DOUBLE" />
+    <result column="commodity_master_id" property="commodityMasterId" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cn.cote.pojo.Commodity" extends="BaseResultMap" >
+    <result column="commodity_message" property="commodityMessage" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    commodity_id, commodity_img, commodity_name, commodity_prives, commodity_master_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    commodity_message
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="cn.cote.pojo.CommodityExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from commodity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="startRow != -1">
+      limit #{startRow},#{endRow}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.cote.pojo.CommodityExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from commodity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="startRow != null and endRow !=null">
+        limit #{startRow},#{endRow}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from commodity
+    where commodity_id = #{commodityId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from commodity
+    where commodity_id = #{commodityId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.cote.pojo.CommodityExample" >
+    delete from commodity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.cote.pojo.Commodity" >
+    insert into commodity (commodity_id, commodity_img, commodity_name, 
+      commodity_prives, commodity_master_id, commodity_message
+      )
+    values (#{commodityId,jdbcType=INTEGER}, #{commodityImg,jdbcType=VARCHAR}, #{commodityName,jdbcType=VARCHAR}, 
+      #{commodityPrives,jdbcType=DOUBLE}, #{commodityMasterId,jdbcType=INTEGER}, #{commodityMessage,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="commodityId" parameterType="cn.cote.pojo.Commodity" >
+    insert into commodity
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="commodityId != null" >
+        commodity_id,
+      </if>
+      <if test="commodityImg != null" >
+        commodity_img,
+      </if>
+      <if test="commodityName != null" >
+        commodity_name,
+      </if>
+      <if test="commodityPrives != null" >
+        commodity_prives,
+      </if>
+      <if test="commodityMasterId != null" >
+        commodity_master_id,
+      </if>
+      <if test="commodityMessage != null" >
+        commodity_message,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="commodityId != null" >
+        #{commodityId,jdbcType=INTEGER},
+      </if>
+      <if test="commodityImg != null" >
+        #{commodityImg,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityName != null" >
+        #{commodityName,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPrives != null" >
+        #{commodityPrives,jdbcType=DOUBLE},
+      </if>
+      <if test="commodityMasterId != null" >
+        #{commodityMasterId,jdbcType=INTEGER},
+      </if>
+      <if test="commodityMessage != null" >
+        #{commodityMessage,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.cote.pojo.CommodityExample" resultType="java.lang.Integer" >
+    select count(*) from commodity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update commodity
+    <set >
+      <if test="record.commodityId != null" >
+        commodity_id = #{record.commodityId,jdbcType=INTEGER},
+      </if>
+      <if test="record.commodityImg != null" >
+        commodity_img = #{record.commodityImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commodityName != null" >
+        commodity_name = #{record.commodityName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commodityPrives != null" >
+        commodity_prives = #{record.commodityPrives,jdbcType=DOUBLE},
+      </if>
+      <if test="record.commodityMasterId != null" >
+        commodity_master_id = #{record.commodityMasterId,jdbcType=INTEGER},
+      </if>
+      <if test="record.commodityMessage != null" >
+        commodity_message = #{record.commodityMessage,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update commodity
+    set commodity_id = #{record.commodityId,jdbcType=INTEGER},
+      commodity_img = #{record.commodityImg,jdbcType=VARCHAR},
+      commodity_name = #{record.commodityName,jdbcType=VARCHAR},
+      commodity_prives = #{record.commodityPrives,jdbcType=DOUBLE},
+      commodity_master_id = #{record.commodityMasterId,jdbcType=INTEGER},
+      commodity_message = #{record.commodityMessage,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update commodity
+    set commodity_id = #{record.commodityId,jdbcType=INTEGER},
+      commodity_img = #{record.commodityImg,jdbcType=VARCHAR},
+      commodity_name = #{record.commodityName,jdbcType=VARCHAR},
+      commodity_prives = #{record.commodityPrives,jdbcType=DOUBLE},
+      commodity_master_id = #{record.commodityMasterId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.cote.pojo.Commodity" >
+    update commodity
+    <set >
+      <if test="commodityImg != null" >
+        commodity_img = #{commodityImg,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityName != null" >
+        commodity_name = #{commodityName,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityPrives != null" >
+        commodity_prives = #{commodityPrives,jdbcType=DOUBLE},
+      </if>
+      <if test="commodityMasterId != null" >
+        commodity_master_id = #{commodityMasterId,jdbcType=INTEGER},
+      </if>
+      <if test="commodityMessage != null" >
+        commodity_message = #{commodityMessage,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where commodity_id = #{commodityId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.cote.pojo.Commodity" >
+    update commodity
+    set commodity_img = #{commodityImg,jdbcType=VARCHAR},
+      commodity_name = #{commodityName,jdbcType=VARCHAR},
+      commodity_prives = #{commodityPrives,jdbcType=DOUBLE},
+      commodity_master_id = #{commodityMasterId,jdbcType=INTEGER},
+      commodity_message = #{commodityMessage,jdbcType=LONGVARCHAR}
+    where commodity_id = #{commodityId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.cote.pojo.Commodity" >
+    update commodity
+    set commodity_img = #{commodityImg,jdbcType=VARCHAR},
+      commodity_name = #{commodityName,jdbcType=VARCHAR},
+      commodity_prives = #{commodityPrives,jdbcType=DOUBLE},
+      commodity_master_id = #{commodityMasterId,jdbcType=INTEGER}
+    where commodity_id = #{commodityId,jdbcType=INTEGER}
+  </update>
+</mapper>

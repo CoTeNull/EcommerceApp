@@ -1,0 +1,564 @@
+﻿* {padding: 0;margin: 0;font-family: "微软雅黑";}
+body {background: rgb(245, 245, 245);}
+a {text-decoration: none;color: black;  }
+ul {list-style: none;  }
+@media (max-width:985px ) {
+    /*小屏幕*/
+    body{
+        margin-top: -85px;
+    }
+    .phonenav{
+        position: fixed;
+        width: 100%;
+        height: 85px;
+        opacity: 0.8;
+        background: white;
+        margin-top: -100px;
+    }
+    .phonenav img{
+        width: 80px;
+        height: 80px;
+    }
+    .phonenav>img{
+        position: absolute;
+        width: 100%;
+        height: 85px;
+    }
+    .phonenav a:nth-of-type(1){
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 80%;
+    }
+    .phonenav a:nth-of-type(2){
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 90%;
+    }
+    header{
+        display: none;
+    }
+    .rightnav{
+        display: none;
+    }
+    article{
+        margin-top: 185px;
+        width: 98%!important;
+        margin-left:2%;
+    }
+    .center-li li p{
+        display: none;
+    }
+    .center-li li>img{
+        float: left;
+        width: 170px!important;
+        height: 170px!important;
+    }
+    .center-li li h3{
+        font-size: 50px;
+    }
+    .righttop{
+        display: none;
+    }
+    .phoneseacher{
+        position: fixed;
+        width: 300px;
+        height: 240px;
+        left:50%;top:50%;
+        transform:translate(-50%,-50%);
+        z-index: 2;
+    }
+    .phoneseacher form{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #f8f8f8;
+        max-width: 1200px;
+        margin: 0 auto;
+        z-index: 2;
+    }
+    .phoneseacher form input[type=text]{
+        float: left;
+        margin-top: 20%;
+        margin-left:5%;
+        width: 90%;
+        height: 60px;
+        padding: 5px;
+        box-sizing: border-box;
+        font-size:20px;
+    }
+    .phoneseacher form input[type=button]{
+        margin-top: 5%;
+        margin-left:25%;
+        float: left;
+        width: 50%;
+        height: 50px;
+        background: skyblue;
+        border: none;
+        transition: all 0.2s;
+    }
+    .phoneseacher img{
+        position: relative;
+        top: 25px;
+        left: -30%;
+        width: 30px;
+        height: 30px;
+    }
+    .coverblack{
+        display:none;
+        opacity: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    .search{
+        display: none;
+    }
+}
+
+@media (min-width:985px) {
+    /*大屏幕*/
+    .phonenav{
+        display: none;
+    }
+    .phoneseacher{
+        display: none;
+    }
+}
+
+
+.leftnav{
+	position: fixed;
+	top: 100px;
+	left:-60%;
+	width: 60%;
+	height: 780px;
+	background: rgba(0,0,0,0.8);
+}
+.leftnav ul{
+	position: absolute;
+	list-style: none;
+	width: 100%;
+	height: 780px;
+}
+.leftnav li{
+	text-align: center;
+	border: 1px solid white;
+	border-top:none;
+	height: 60px;
+	line-height: 60px;
+	box-sizing: border-box;
+}
+.leftnav li a{
+	width: 100%;
+	height: 100%;
+	color: #cccccc;
+	font-size: 30px;
+}
+header {
+    /*position: relative;*/
+    position: fixed;
+	height: 90px;
+	background: rgba(41, 41, 41, 0.4);
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+}
+header div:nth-of-type(1){
+    width: 100%;
+    height: 30px;
+}
+.headerup{
+    max-width:1200px;
+    margin: 0 auto;
+}
+.headerup a{
+    float: left;
+	color: #6a6a6a;
+    width: 100px;
+    height: 40px;
+    line-height:40px;
+    text-align: center;
+    transition: all 0.2s
+}
+.headerup a:nth-last-of-type(1){
+    float: right;
+    width: 200px;
+    height: 40px;
+    line-height:40px;
+    text-align: center;
+}
+header a:hover{
+    color: skyblue;
+}
+header div:nth-of-type(2){
+    position: relative;
+    width: 100%;
+    height: 32px;
+    max-width:1200px;
+    margin: 3px auto;
+}
+header div:nth-of-type(2) img:nth-of-type(1){
+    float: left;
+    margin-left: -25%;
+    width: 300px;
+    height: 52px;
+}
+header div:nth-of-type(2) div{
+    float: left;
+    width: 100px;
+    height: 50px;
+    border-left: 3px solid #979797;
+    color: #979797;
+    padding-left: 10px;
+    margin-left:10px;
+}
+header ul{
+    position: absolute;
+    top: 60%;
+    left:40%;
+    width: 75%;
+    text-align: center;
+}
+header ul li{
+    float: left;
+    font-size:20px;
+    width: 7%;
+    height: 35px;
+    line-height:45px;
+}
+header ul li a{
+    color: #343434;
+    display: inline-block;
+    width: 60px;
+    height: 35px;
+    transition: all 0.2s;
+}
+header ul li:nth-last-of-type(1){
+    position: relative;
+}
+header ul li img{
+    position: absolute;
+    top: 10px;
+    left:10px;
+    width: 25px!important;
+    height: 25px!important;
+}
+.search{
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    margin-top:-70px;
+    z-index: 1;
+    background-color: rgba(41, 41, 41, 0.4);;
+}
+.search form{
+    position: relative;
+    width: 60%;
+    height: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.search form input[type=text]{
+    float: left;
+    margin-top: 1%;
+    margin-left:10%;
+    width: 60%;
+    height: 42px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size:20px;
+}
+.search form input[type=button]{
+    margin-top: 1%;
+    float: left;
+    width: 10%;
+    height: 42px;
+    background: skyblue;
+    border: none;
+    transition: all 0.2s;
+}
+.search form input[type=button]:hover{
+    background: skyblue;
+    opacity: 0.9;
+}
+.search img{
+    position: relative;
+    top: 25px;
+    left: -6%;
+    width: 20px;
+    height: 20px;
+}
+.Maincenter{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 2050px;
+    min-height: 1px;
+    font-size: 0;
+}
+article{
+    overflow: hidden;
+}
+article ul li p{
+    text-align: center;
+    text-shadow:1px 1px 1px white;
+    color: rgba(255, 255, 255, 0.47);
+    font-size:50px;
+    position: absolute;
+    z-index: 2;
+    left:calc(50% - 723px/2 + 10px);
+    width: 723px;
+    top:15%;
+    font-family:楷体;
+}
+article ul li:nth-of-type(3) p{
+    top:15%;
+}
+article ul li:nth-of-type(3) span{
+    top:95%;
+}
+article ul li:nth-of-type(2) a{
+    color: rgba(255, 192, 203, 0.86);
+}
+article ul li:nth-of-type(3) a{
+    color: rgba(135, 206, 235, 0.64);
+    text-shadow: 1px 0px 1px skyblue;
+}
+article ul li span{
+    text-align: center;
+    font-size:20px;
+    position: absolute;
+    z-index: 2;
+    left:calc(50% - 230px/2 );
+    width: 230px;
+    top:23%;
+}
+article ul li span a{
+    text-shadow:1px 1px 1px black;
+    font-family:楷体;
+    color: #4b44f0;
+}
+article ul li{
+    overflow: hidden;
+    perspective:1000px;
+}
+
+article ul li:nth-of-type(1) div img{
+    position: absolute;
+    z-index: 2;
+    left:calc(50% - 15%/2);
+    top:32%;
+}
+
+article ul li:nth-of-type(1) div img:nth-of-type(1){
+    width: 15%;
+    transform: translateZ(80px);
+}
+article ul li:nth-of-type(1) div img:nth-of-type(2){
+    width: 15%;
+    left:calc(50% - 15%/2 - 14%);
+    transform: rotateY(-30deg);
+    transform-origin:center;
+}
+article ul li:nth-of-type(1) div img:nth-of-type(3){
+    left:calc(50% - 15%/2 + 14%);
+    transform: rotateY(30deg);
+    width: 15%;
+}
+
+
+article ul li:nth-of-type(2) div img{
+    position: absolute;
+    z-index: 2;
+    width: 2%;
+    left:calc(50% - 1%);
+    top:75%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(1){
+    left:15%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(2){
+    left:20%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(3){
+    left:25%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(4){
+    left:30%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(5){
+    left:35%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(6){
+    left:40%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(8){
+    left:58%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(9){
+    left: 63%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(10){
+    left: 68%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(11){
+    left: 73%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(12){
+    left: 78%;
+}
+article ul li:nth-of-type(2) div img:nth-of-type(13){
+    left: 83%;
+}
+article ul li:nth-of-type(3) div img{
+    position: absolute;
+    z-index: 2;
+    width: 15%;
+    left:calc(50% - 15%/2);
+    top:35%;
+}
+article ul li:nth-of-type(3) div img:nth-of-type(odd){
+    top: 27%;
+}
+article ul li:nth-of-type(3) div img:nth-of-type(1){
+    left:4%;
+}
+article ul li:nth-of-type(3) div img:nth-of-type(2){
+    left:20%;
+}
+article ul li:nth-of-type(3) div img:nth-of-type(3){
+    left:36%;
+}
+article ul li:nth-of-type(3) div img:nth-of-type(4){
+    left:52%;
+}
+article ul li:nth-of-type(3) div img:nth-of-type(5){
+    left:68%;
+}
+article ul li:nth-of-type(3) div img:nth-of-type(6){
+    left:84%;
+}
+
+article ul li:nth-of-type(4) div img{
+    position: absolute;
+    z-index: 2;
+    width: 50%;
+    left:calc(25%);
+    top:55%;
+}
+article ul li:nth-of-type(4) div img:nth-of-type(1){
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    left:calc(30%);
+    top:25%;
+}
+.iphonefrist1{
+    animation: iphonefrist1 1.5s ;
+    animation-fill-mode:forwards;
+}
+.iphonefrist2{
+    animation: iphonefrist2 1.5s ;
+    animation-fill-mode:forwards;
+}
+.iphonesecend1{
+    animation: iphonesecend1 2s ;
+    animation-fill-mode:forwards;
+}
+.iphonesecend2{
+    animation: iphonesecend2 3s ;
+    animation-fill-mode:forwards;
+}
+.iphonethree1{
+    animation: iphonethree1 1.5s ;
+    animation-fill-mode:forwards;
+}
+.iphonethree2{
+    animation: iphonethree2 1.5s ;
+    animation-fill-mode:forwards;
+}
+.iphonefour{
+    animation: iphonefour 2s ;
+    animation-fill-mode:forwards;
+}
+.headercolor{
+    animation: headercolor 2s ;
+    animation-fill-mode:forwards;
+}
+.headercolor2{
+    animation: headercolor2 2s ;
+    animation-fill-mode:forwards;
+}
+@keyframes iphonefrist1 {
+    from{left:calc(50% - 15%/2 - 14%);}
+    to{left:calc(50% - 15%/2 - 15%);}
+}
+@keyframes iphonefrist2 {
+    from{ left:calc(50% - 15%/2 + 14%);}
+    to{ left:calc(50% - 15%/2 + 15%);}
+}
+@keyframes iphonesecend1{
+    from{top:75%}
+    to{top:70%}
+}
+@keyframes iphonesecend2{
+    from{top:75%}
+    to{top:40%}
+}
+
+@keyframes iphonethree1{
+    from{top:27%}
+    to{top:31%}
+}
+@keyframes iphonethree2{
+    from{top:35%}
+    to{top:31%}
+}
+
+@keyframes iphonefour{
+    from{
+        width: 50%;
+        left:calc(25%);
+    }
+    to{
+        width: 60%;
+        left:calc(20%);
+    }
+}
+@keyframes headercolor {
+    from{background:rgba(255, 255, 255, 0.4);}
+    to{background: rgba(41, 41, 41, 0.4);}
+}
+@keyframes headercolor2 {
+    from{background:rgba(41, 41, 41, 0.4);}
+    to{background: rgba(255, 255, 255, 0.4);}
+}
+
+footer {
+	float: left;
+	height: 100px;
+	width: 100%;
+	background: #262626;
+	color: #979797;
+}
+
+footer h2 {
+	font-size: 20px;
+	font-weight: 400;
+	width: 100px;
+	height: 25px;
+	margin: 10px auto;
+	margin-bottom: 0px;
+}
+
+footer p {
+	text-align: center;
+}
+
+footer img {
+	position: relative;
+	left: 50%;
+	margin-left: -35px;
+}

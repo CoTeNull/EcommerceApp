@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link rel="shortcut icon" href="img/logo1.png"/>
+    <link rel="stylesheet" href="css/Font-Awesome-master/css/font-awesome.css">
+    <link rel="stylesheet" href="css/denglu/denglu.css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/denglu/denglu.js"></script>
+    <script src="js/pace.js"></script>
+    <script src="js/JsMode.js"></script>
+    <script src="js/gt.js"></script>
+    <link href="css/pace.css" rel="stylesheet">
+</head>
+<body>
+<main>
+    <header>
+        <div>
+            <img src="img/logo1.png" alt="">
+            <h1>三明学院<span>“跳蚤市场”在线交易平台</span></h1>
+            <p><a href="main.html">关于我们</a></p>
+            <p><a href="main.html">官网首页</a></p>
+        </div>
+    </header>
+    <article>
+        <div>
+            <aside>
+                <ul>
+                    <li><img src="img/shop/thumbnail (1).png" alt=""></li>
+                    <li><img src="img/denglu/thumbnail (2).png" alt=""></li>
+                    <li><img src="img/denglu/thumbnail (3).png" alt=""></li>
+                    <li><img src="img/denglu/thumbnail.png" alt=""></li>
+                    <li><img src="img/denglu/blue.png" alt=""></li>
+                    <li><img src="img/denglu/thumbnail (4).png" alt=""></li>
+                </ul>
+            </aside>
+            <div class="article_header_footer">
+                    <ul>
+                        <li class="hShow" data-num="1"></li>
+                        <li data-num="2"></li>
+                        <li data-num="3"></li>
+                        <li data-num="4"></li>
+                        <li data-num="5"></li>
+                        <li data-num="6"></li>
+                    </ul>
+                </div>
+            <section>
+                <form action="./yzm/web/VerifyLoginServlet.php" id="longin">
+                <h2>会 员 登 陆</h2>
+                <p><i class="fa fa-user" aria-hidden="true" ></i><input type="text" id="name" autocomplete="off" value placeholder="请输入用户ID"></p>
+                <p><i class="fa fa-lock" aria-hidden="true" id="eye"></i><input type="password" id="pass" autocomplete="off" value placeholder="请输入密码"></p>
+                    <p id="nowlogin">正在加载验证码......</p>
+                <button id="denglu" onclick="return false;">登 陆</button>
+                <p>请同学输入自己的<b> 学籍号 </b>登陆</p>
+                    <span><a href="relogin.html">还没有账号？点击注册</a></span>
+            </form>
+                <div id="massage">
+                    <h2>欢 迎 登 陆</h2>
+                    <img src="img/userImg/toux.jpg" alt="" id="userimg">
+                    <p>尊敬的 <span id="username">白夜</span> 您好</p>
+                    <p>您已经成功登陆</p>
+                    <a href="javascript:;" class="longin" id="lonin">进入首页</a>
+                    <p><i id="time">3</i>秒后自动跳转...</p>
+                </div>
+            </section>
+        </div>
+    </article>
+    <footer>
+        <div>
+            <p>福建省三明市三明学院</p>
+            <p>御心软件工作室版权所有 © 2015-2019  ·  增值电信业务经营许可证 B1.B2-200X018X  ·  闽ICP备170066X7号-6</p>
+            <p><img src="img/piclogo.gif" alt=""></p>
+        </div>
+    </footer>
+</main>
+</body>
+</html>

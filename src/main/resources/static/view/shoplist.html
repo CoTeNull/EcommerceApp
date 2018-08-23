@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品大厦</title>
+    <link rel="shortcut icon" href="img/logo1.png"/>
+    <script src="js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="css/shop/needMaincss.css">
+    <script src="js/shop/needmainjs.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/Font-Awesome-master/css/font-awesome.css">
+    <script src="js/JsMode.js"></script>
+    <script src="js/pace.js"></script>
+    <link href="css/pace2.css" rel="stylesheet">
+</head>
+<body>
+
+<main>
+    <header>
+        <div class="header_header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">跳蚤市场<span class="addressadd"> 商品大厦</span></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="main.html">首页<!--<span class="sr-only">(current)</span>--></a></li>
+                            <li class="active"><a href="javascript:;">商品大厦</a></li>
+                            <li><a href="shopall.html">商品仓库</a></li>
+                            <li class="dropdown">
+                                <a href="myshop.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的跳蚤 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="myshop.html">个人信息</a></li>
+                                    <li><a href="myshop.html">待处理消息</a></li>
+                                    <li><a href="myshop.html">待处理订单</a></li>
+                                    <li><a href="myshop.html">♥ 我的购物车 ♥</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="输入关键字查询">
+                            </div>
+                            <button type="submit" class="btn btn-default">搜索</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <img src="img/userImg/toux.jpg" alt="" style="position: absolute; width: 40px;height: 40px;top:5px; left: -40px;border-radius: 50%">
+                                <script>
+                                    if(getCookie("userImg")!="")
+                                        $(".dropdown>img").attr("src",getCookie("userImg"));
+                                </script>
+                                <a  href="#" class="dropdown-toggle usershowname" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  User<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index.html" class="usernameif">登陆</a></li>
+                                    <li><a href="index.html" id="endname">注销</a></li>
+                                    <script>
+                                        $("#endname").click(
+                                            function () {
+                                                if(confirm("您确定要注销么？(注销后将失去浏览记录！)")){
+                                                    removeCookie("showName");
+                                                    removeCookie("userImg");
+                                                    removeCookie("userName");
+                                                    window.location.href="/";
+                                                }
+                                                else{
+                                                    return false;
+                                                }
+                                            }
+                                        )
+                                    </script>
+                                    <li><a href="index.html">切换账号</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:;">关于我们</a></li>
+                            <li><a href="javascript:;"></a></li>
+                            <script>
+                                //                    $("fp-nav")
+                            </script>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="header_article_wrap">
+            <div class="header_article">
+                <img src="img/shop/tiaozhaolog.png" alt="">
+                <p>商品 | 服务商 | 二手</p>
+                <input type="text">
+                <a href="javascript:;"> <i class="fa fa-address-card-o fa-2x" aria-hidden="true"></i> 搜商品</a>
+                <div>app下载<img src="img/shop/weichat.jpg" alt=""></div>
+                <div>微信公众号<img src="img/shop/weichat.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="header_footer">
+            <a href="shopall.html">商城分类</a>
+            <a href="shopall.html">新品首发 &nbsp;&nbsp;&nbsp;|</a>
+            <a href="shopall.html">奢侈大牌  &nbsp;&nbsp;&nbsp;|</a>
+            <a href="shopall.html">智能生活  &nbsp;&nbsp;&nbsp;|</a>
+            <a href="shopall.html">毕业清理</a>
+            <a href="shopall.html">直接发布</a>
+        </div>
+    </header>
+    <article>
+        <div class="article_header">
+            <div class="article_header_left">
+                <ul>
+                    <li data-num="1">
+                        <span></span>
+                        <i class="fa fa-address-card-o " aria-hidden="true"></i><a href="javascript:;">最新衣物</a>
+                        <div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                        </div>
+                    </li>
+                    <li data-num="2">
+                        <span></span>
+                        <i class="fa fa-magic " aria-hidden="true"></i> <a href="javascript:;">九九皮包</a>
+                        <div>
+                            <div><h2>· 创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期</h2><span>场景</span> | <span>角色</span> | <span>本</span> | <span>分镜头</span></div>
+                            <div><h2>· 创作</h2><span>场景</span> | <span>色</span> | <span>剧本</span> | <span>镜头</span></div>
+                            <div><h2>· 前期</h2><span>场</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                        </div>
+                    </li>
+                    <li data-num="3">
+                        <span></span>
+                        <i class="fa fa-shopping-basket " aria-hidden="true"></i><a href="javascript:;">玩具高达</a>
+                        <div>
+                            <div><h2>· 前递四方速递</h2><span>场的</span> | <span>角的</span> | <span>剧本是</span> | <span>分收到头</span></div>
+                            <div><h2>· 前递四方速递</h2><span>场的</span> | <span>角的</span> | <span>剧本是</span> | <span>分收到头</span></div>
+                            <div><h2>· 前递四方速递</h2><span>场的</span> | <span>角的</span> | <span>剧本是</span> | <span>分收到头</span></div>
+                            <div><h2>· 前递四方速递</h2><span>场的</span> | <span>角的</span> | <span>剧本是</span> | <span>分收到头</span></div>
+                            <div><h2>· 前递四方速递</h2><span>场的</span> | <span>角的</span> | <span>剧本是</span> | <span>分收到头</span></div>
+                            <div><h2>· 前递四方速递</h2><span>场的</span> | <span>角的</span> | <span>剧本是</span> | <span>分收到头</span></div>
+                        </div>
+                    </li>
+                    <li data-num="4">
+                        <span></span>
+                        <i class="fa fa-address-card-o " aria-hidden="true"></i><a href="javascript:;">家电数码</a>
+                        <div>
+                            <div><h2>· 后期制作</h2><span>场12景</span> | <span>角3色</span> | <span>3剧本</span> | <span>分3镜头</span></div>
+                            <div><h2>· 后期制作</h2><span>场12景</span> | <span>角3色</span> | <span>3剧本</span> | <span>分3镜头</span></div>
+                            <div><h2>· 后期制作</h2><span>场12景</span> | <span>角3色</span> | <span>3剧本</span> | <span>分3镜头</span></div>
+                            <div><h2>· 后期制作</h2><span>场12景</span> | <span>角3色</span> | <span>3剧本</span> | <span>分3镜头</span></div>
+                            <div><h2>· 后期制作</h2><span>场12景</span> | <span>角3色</span> | <span>3剧本</span> | <span>分3镜头</span></div>
+                            <div><h2>· 后期制作</h2><span>场12景</span> | <span>角3色</span> | <span>3剧本</span> | <span>分3镜头</span></div>
+                        </div>
+                    </li>
+                    <li data-num="5">
+                        <span></span>
+                        <i class="fa fa-magic " aria-hidden="true"></i> <a href="javascript:;">手机科技</a>
+                        <div>
+                            <div><h2>·小米手机 / Mi6</h2><a href=""><span>0-1000元</span></a> | <a href=""><span>1000-2000元</span></a>
+                                <br><a href=""><span>2000-3000元</span></a> | <a href=""><span>3000元以上</span></a></div>
+                            <div><h2>·苹果手机 / iPhone7</h2><a href=""><span>0-1000元</span></a> | <a href=""><span>1000-2000元</span></a>
+                                <br><a href=""><span>2000-3000元</span></a> | <a href=""><span>3000元以上</span></a></div>
+                            <div><h2>·华为手机 / Nova2</h2><a href=""><span>0-1000元</span></a> | <a href=""><span>1000-2000元</span></a>
+                                <br><a href=""><span>2000-3000元</span></a> | <a href=""><span>3000元以上</span></a></div>
+                            <div><h2>·荣耀手机 / V9</h2><a href=""><span>0-1000元</span></a> | <a href=""><span>1000-2000元</span></a>
+                                <br><a href=""><span>2000-3000元</span></a> | <a href=""><span>3000元以上</span></a></div>
+                            <div><h2>·vivo手机 / Vivo x9</h2><a href=""><span>0-1000元</span></a> | <a href=""><span>1000-2000元</span></a>
+                                <br><a href=""><span>2000-3000元</span></a> | <a href=""><span>3000元以上</span></a></div>
+                        </div>
+                    </li>
+                    <li data-num="6">
+                        <span></span>
+                        <i class="fa fa-address-card-o " aria-hidden="true"></i><a href="javascript:;">珠宝手表</a>
+                        <div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                        </div>
+                    </li>
+                    <li data-num="7">
+                        <span></span>
+                        <i class="fa fa-address-card-o " aria-hidden="true"></i><a href="javascript:;">鲜花宠物</a>
+                        <div>
+                            <div><h2>· 创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期</h2><span>场景</span> | <span>角色</span> | <span>本</span> | <span>分镜头</span></div>
+                            <div><h2>· 创作</h2><span>场景</span> | <span>色</span> | <span>剧本</span> | <span>镜头</span></div>
+                            <div><h2>· 前期</h2><span>场</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                        </div>
+                    </li>
+                    <li data-num="8">
+                        <span></span>
+                        <i class="fa fa-magic " aria-hidden="true"></i> <a href="javascript:;">二手车辆</a>
+                        <div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                            <div><h2>· 前期创作</h2><span>场景</span> | <span>角色</span> | <span>剧本</span> | <span>分镜头</span></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="article_header_right">
+               <header>
+                   <span data-num="1"><a href="">公告</a></span>
+                   <span data-num="2"><a href="">规则</a></span>
+                   <span data-num="3"><a href="">入门</a></span>
+               </header>
+                <article>
+                    <ul>
+                        <li>
+                            <ul>
+                                <li><a href="">支付宝充值公告</a></li>
+                                <li><a href="">交易平台用户公告</a></li>
+                                <li><a href="">'跳跳'老板必看公告</a></li>
+                                <li><a href="">其他网站接口更新公告</a></li>
+                                <li><a href="">V0.0.2版网站更新公告</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="">展示大厅规则需求说明</a></li>
+                                <li><a href="">列表商城规则需求说明</a></li>
+                                <li><a href="">用户规则需求说明</a></li>
+                                <li><a href="">服务商规则需求说明</a></li>
+                                <li><a href="">网站使用规则需求说明</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="">如何注册会员</a></li>
+                                <li><a href="">如何注册为"跳跳"老板</a></li>
+                                <li><a href="">如何申请网站管理员</a></li>
+                                <li><a href="">如何使用登记特权</a></li>
+                                <li><a href="">如何联系到交易商家</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+                <footer>
+                    <span>平<br>台<br>交<br>易</span>
+                    <div> <ul>
+                        <li><i>¥120.00</i> 二手摩托交易成功..</li>
+                        <li><i>¥130.00</i> 最新品牌商品完成..</li>
+                        <li><i>¥140.00</i> 毕业班学长健身器..</li>
+                        <li><i>¥110.00</i> 女生用伞九九新出..</li>
+                        <li><i>¥120.00</i> 二手摩托交易成功..</li>
+                        <li><i>¥130.00</i> 最新品牌商品完成..</li>
+                        <li><i>¥140.00</i> 毕业班学长健身器..</li>
+                        <li><i>¥110.00</i> 女生用伞九九新出..</li>
+                        <li><i>¥120.00</i> 二手摩托交易成功..</li>
+                    </ul></div>
+                </footer>
+            </div>
+            <div class="article_header_main">
+                <ul>
+                    <li><img src="img/shop/thumbnail (1).png" alt=""></li>
+                    <li><img src="img/shop/thumbnail (2).png" alt=""></li>
+                    <li><img src="img/shop/thumbnail (3).png" alt=""></li>
+                    <li><img src="img/shop/thumbnail.png" alt=""></li>
+                    <li><img src="img/shop/blue.png" alt=""></li>
+                    <li><img src="img/shop/thumbnail (4).png" alt=""></li>
+                </ul>
+            </div>
+            <div class="article_header_footer">
+                <ul>
+                    <li class="hShow" data-num="1"></li>
+                    <li data-num="2"></li>
+                    <li data-num="3"></li>
+                    <li data-num="4"></li>
+                    <li data-num="5"></li>
+                    <li data-num="6"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="article_main">
+            <div>
+                <img src="img/shop/hg.jpg" alt="">
+                <img src="img/shop/jdcs.jpg" alt="">
+                <img src="img/shop/scdp.jpg" alt="">
+                <img src="img/shop/znsh.png" alt="">
+            </div>
+            <div class="block floatright">
+                <div class="block_header">
+                    <span>九九皮包</span>
+                    <ul>
+                        <a href=""><li>真皮</li></a>
+                        <a href=""><li>仿皮</li></a>
+                        <a href=""><li>男士</li></a>
+                        <a href=""><li>女士</li></a>
+                        <a href=""><li>更多 》</li></a>
+                    </ul>
+                </div>
+                <div class="block_main">
+                    <img src="img/shop/jjpb.jpg" alt="">
+                    <div class="block_main_top">
+                        <ul>
+                            <li><i>￥600</i><a href="">夏季宽松褶皱时尚休闲套装</a></li>
+                            <li><i>￥600</i><a href="">雅莹春季专柜印花收腰百褶连衣裙</a></li>
+                            <li><i>￥150</i><a href="">koradior韩版v领碎花修身雪纺连衣裙</a></li>
+                            <li><i>￥700</i><a href="">蕾丝透视复古喇叭袖moco两件套</a></li>
+                            <li><i>￥100</i><a href="">春夏青春一字领露肩时尚纯棉连衣裙</a></li>
+                        </ul>
+                    </div>
+                    <div class="block_main_footer">
+                        <img src="img/shop/thumbnail (9).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (10).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (11).png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block_header">
+                    <span>最新衣物</span>
+                    <ul>
+                        <a href=""><li>男士</li></a>
+                        <a href=""><li>女士</li></a>
+                        <a href=""><li>婴儿</li></a>
+                        <a href=""><li>职业装</li></a>
+                        <a href=""><li>更多 》</li></a>
+                    </ul>
+                </div>
+                <div class="block_main">
+                    <img src="img/shop/zxyw1.jpg" alt="">
+                    <div class="block_main_top" id="clotheM">
+                        <ul>
+                            <!---->
+                        </ul>
+                    </div>
+                    <script>
+                        $.get('/Shop/shop/getShop?number=4',function (data) {
+                            console.log(data);
+                            $.each(data.data, function (index, item) {
+                                $("#clotheM ul").prepend("<li><i>￥" + item.commodityPrives + "</i><a href='javascript:;' data-num='"+item.commodityId+"'>" + item.commodityName + "</a></li>");
+                            })
+                        })
+                    </script>
+                    <div class="block_main_footer">
+                        <img src="img/shop/thumbnail (9).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (10).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (11).png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="block floatright">
+                <div class="block_header">
+                    <span><a href="商品总表.html">手机科技</a></span>
+                    <ul>
+                        <a href=""><li>小米</li></a>
+                        <a href="other/phone/iphone.html"><li>苹果</li></a>
+                        <a href=""><li>华为</li></a>
+                        <a href=""> <li>荣耀</li></a>
+                        <a href=""><li>更多 》</li></a>
+                    </ul>
+                </div>
+                <div class="block_main">
+                    <img src="img/shop/sjkj.jpg" alt="">
+                    <div class="block_main_top" id="phoneM">
+                        <ul>
+                            <!---->
+                        </ul>
+                    </div>
+                    <script>
+                        $.get('/Shop/shop/getShop?number=4',function (data) {
+                            console.log(data);
+                            $.each(data.data, function (index, item) {
+                                $("#phoneM ul").prepend("<li><i>￥" + item.commodityPrives + "</i><a href='javascript:;' data-num='"+item.commodityId+"'>" + item.commodityName + "</a></li>");
+                            })
+
+                        })
+
+                    </script>
+                    <div class="block_main_footer">
+                        <img src="img/shop/thumbnail (9).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (10).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (11).png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block_header">
+                    <span>影视用品</span>
+                    <ul>
+                        <li>特价电影</li>
+                        <li>网络会员</li>
+                        <li>托管PPT</li>
+                        <li>海报设计</li>
+                        <li>更多 》</li>
+                    </ul>
+                </div>
+                <div class="block_main">
+                    <img src="img/shop/thumbnail (8).png" alt="">
+                    <div class="block_main_top">
+                        <ul>
+                            <li><i>￥600</i> <a href="">交通流程视频收集</a></li>
+                            <li><i>￥600</i><a href=""> 舞台剧背景音效制作</a></li>
+                            <li><i>￥1500</i> <a href="">网站原创歌曲创作</a></li>
+                            <li><i>￥8万</i><a href="">《广告拍摄制作》</a></li>
+                            <li><i>￥1000</i> <a href="">为鑫亚达之歌征集谱曲</a></li>
+                        </ul>
+                    </div>
+                    <div class="block_main_footer">
+                        <img src="img/shop/thumbnail (9).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (10).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (11).png" alt="">
+                    </div>
+                </div>
+            </div>
+            <img src="img/shop/thumbnail (12).png" alt="">
+            <div class="block floatright">
+                <div class="block_header">
+                    <span>九九皮包</span>
+                    <ul>
+                        <a href=""><li>真皮</li></a>
+                        <a href=""><li>仿皮</li></a>
+                        <a href=""><li>男士</li></a>
+                        <a href=""><li>女士</li></a>
+                        <a href=""><li>更多 》</li></a>
+                    </ul>
+                </div>
+                <div class="block_main">
+                    <img src="img/shop/jjpb.jpg" alt="">
+                    <div class="block_main_top">
+                        <ul>
+                            <li><i>￥600</i><a href="">夏季宽松褶皱时尚休闲套装</a></li>
+                            <li><i>￥600</i><a href="">雅莹春季专柜印花收腰百褶连衣裙</a></li>
+                            <li><i>￥150</i><a href="">koradior韩版v领碎花修身雪纺连衣裙</a></li>
+                            <li><i>￥700</i><a href="">蕾丝透视复古喇叭袖moco两件套</a></li>
+                            <li><i>￥100</i><a href="">春夏青春一字领露肩时尚纯棉连衣裙</a></li>
+                        </ul>
+                    </div>
+                    <div class="block_main_footer">
+                        <img src="img/shop/thumbnail (9).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (10).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (11).png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block_header">
+                    <span>最新衣物</span>
+                    <ul>
+                        <a href=""><li>男士</li></a>
+                        <a href=""><li>女士</li></a>
+                        <a href=""><li>婴儿</li></a>
+                        <a href=""><li>职业装</li></a>
+                        <a href=""><li>更多 》</li></a>
+                    </ul>
+                </div>
+                <div class="block_main">
+                    <img src="img/shop/zxyw1.jpg" alt="">
+                    <div class="block_main_top">
+                        <ul>
+                            <li><i>￥600</i><a href="">夏季宽松褶皱时尚休闲套装</a></li>
+                            <li><i>￥600</i><a href="">雅莹春季专柜印花收腰百褶连衣裙</a></li>
+                            <li><i>￥150</i><a href="">koradior韩版v领碎花修身雪纺连衣裙</a></li>
+                            <li><i>￥700</i><a href="">蕾丝透视复古喇叭袖moco两件套</a></li>
+                            <li><i>￥100</i><a href="">春夏青春一字领露肩时尚纯棉连衣裙</a></li>
+                        </ul>
+                    </div>
+                    <div class="block_main_footer">
+                        <img src="img/shop/thumbnail (9).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (10).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (11).png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="block floatright">
+                <div class="block_header">
+                    <span>手机科技</span>
+                    <ul>
+                        <li>小米</li>
+                        <li>苹果</li>
+                        <li>华为</li>
+                        <li>荣耀</li>
+                        <li>更多 》</li>
+                    </ul>
+                </div>
+                <div class="block_main">
+                    <img src="img/shop/sjkj.jpg" alt="">
+                    <div class="block_main_top">
+                        <ul>
+                            <li><i>￥3000</i><a href=""> Huawei/华为 P10</a></li>
+                            <li><i>￥6000</i><a href="">Apple/苹果 iPhone 7 Plus</a></li>
+                            <li><i>￥1500</i><a href="">OPPO R9S</a></li>
+                            <li><i>￥2000</i><a href="">Xiaomi/小米 红米Note4X 32G</a></li>
+                            <li><i>￥3000</i> <a href="">honor/荣耀 荣耀8青春版</a></li>
+                        </ul>
+                    </div>
+                    <div class="block_main_footer">
+                        <img src="img/shop/thumbnail (9).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (10).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (11).png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block_header">
+                    <span>影视用品</span>
+                    <ul>
+                        <li>特价电影</li>
+                        <li>网络会员</li>
+                        <li>托管PPT</li>
+                        <li>海报设计</li>
+                        <li>更多 》</li>
+                    </ul>
+                </div>
+                <div class="block_main">
+                    <img src="img/shop/thumbnail (8).png" alt="">
+                    <div class="block_main_top">
+                        <ul>
+                            <li><i>￥600</i> <a href="">交通流程视频收集</a></li>
+                            <li><i>￥600</i><a href=""> 舞台剧背景音效制作</a></li>
+                            <li><i>￥1500</i> <a href="">网站原创歌曲创作</a></li>
+                            <li><i>￥8万</i><a href="">《广告拍摄制作》</a></li>
+                            <li><i>￥1000</i> <a href="">为鑫亚达之歌征集谱曲</a></li>
+                        </ul>
+                    </div>
+                    <div class="block_main_footer">
+                        <img src="img/shop/thumbnail (9).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (10).png" alt="">
+                        <span></span>
+                        <img src="img/shop/thumbnail (11).png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="block lastblock">
+                <div class="block_header">
+                    <span>您可能感兴趣的商品</span>
+                    <ul>
+                        <li>更多 》</li>
+                    </ul>
+                </div>
+                <div class="lastblock_main">
+                    <ul>
+                        <!--后台数据-->
+                    </ul>
+                    <div id="faleft"><a href="javascript:;"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></div>
+                    <div id="faright"><a href="javascript:;"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="footer_main">
+           <div class="footer_main_left">
+               <img src="img/shop/tiaozhaolog.png" alt="">
+               <p>
+                   分享
+                   <i class="fa fa-qq" aria-hidden="true"></i>
+                   <i class="fa fa-list-alt" aria-hidden="true"></i>
+                   <i class="fa fa-weixin" aria-hidden="true"></i>
+                   <i class="fa fa-weibo" aria-hidden="true"></i>
+               </p>
+               <p>客户服务QQ： 4009287979，2773398623</p>
+               <p>全国咨询热线（Hotline）：400-164-7979</p>
+               <p>地址（Address）：福建省三明市三元区三明学院</p>
+               <p>邮编（Zip Code）：215000</p>
+           </div>
+           <div class="footer_main_right">
+               <ul>
+                   <li>
+                       <h2>新手上路</h2>
+                       <p><a href="javascript:;">注册会员</a></p>
+                       <p><a href="">客户入门指南</a></p>
+                       <p><a href="javascript:;">'跳跳'老板入门</a></p>
+                       <p><a href="javascript:;">服务商入门</a></p>
+                   </li>
+                   <li>
+                       <h2>'跳跳'老板手册</h2>
+                       <p><a href="javascript:;">发布商品</a></p>
+                       <p><a href="javascript:;">查看发布商品事项</a></p>
+                       <p><a href="javascript:;">加急发布</a></p>
+                       <p><a href="javascript:;">发布置顶</a></p>
+                       <p><a href="javascript:;">其他发布问题</a></p>
+                   </li>
+                   <li>
+                       <h2>客户手册</h2>
+                       <p><a href="javascript:;">商品大厅模块介绍</a></p>
+                       <p><a href="javascript:;">实名认证</a></p>
+                       <p><a href="javascript:;">班级认证</a></p>
+                       <p><a href="javascript:;">查看参与需求</a></p>
+                       <p><a href="javascript:;">会员等级以及服务</a></p>
+                   </li>
+                   <li>
+                       <h2>安全保障</h2>
+                       <p><a href="javascript:;">安全交易流程</a></p>
+                       <p><a href="javascript:;">申请维护</a></p>
+                       <p><a href="javascript:;">冻结账号</a></p>
+                   </li>
+               </ul>
+           </div>
+        </div>
+    </footer>
+</main>
+</body>
+</html>
+

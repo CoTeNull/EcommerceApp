@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cote.mapper.MyCommodityMapper" >
+    <resultMap id="BaseResultMap" type="cn.cote.pojo.MyCommodity" >
+        <id column="commodity_id" property="commodityId" jdbcType="INTEGER" />
+        <result column="commodity_img" property="commodityImg" jdbcType="VARCHAR" />
+        <result column="commodity_name" property="commodityName" jdbcType="VARCHAR" />
+        <result column="commodity_prives" property="commodityPrives" jdbcType="DOUBLE" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="cn.cote.pojo.MyCommodity" extends="BaseResultMap" >
+        <result column="commodity_message" property="commodityMessage" jdbcType="LONGVARCHAR" />
+    </resultMap>
+    <select id="selectCommodityAndMaster" parameterType="java.lang.Integer"  resultMap="ResultMapWithBLOBs">
+   select commodity_id,commodity_img,commodity_name,commodity_prives,commodity_message,user_name FROM commodity left join user on user_id=commodity_master_id ORDER BY commodity_id desc limit  #{start,jdbcType=INTEGER}, #{end,jdbcType=INTEGER}
+    </select>
+</mapper>

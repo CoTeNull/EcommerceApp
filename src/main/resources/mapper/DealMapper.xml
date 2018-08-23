@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cote.mapper.DealMapper" >
+  <resultMap id="BaseResultMap" type="cn.cote.pojo.Deal" >
+    <id column="deal_id" property="dealId" jdbcType="INTEGER" />
+    <result column="deal_user_id" property="dealUserId" jdbcType="INTEGER" />
+    <result column="deal_shop_id" property="dealShopId" jdbcType="INTEGER" />
+    <result column="deal_time" property="dealTime" jdbcType="TIMESTAMP" />
+    <result column="deal_code" property="dealCode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    deal_id, deal_user_id, deal_shop_id, deal_time, deal_code
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.cote.pojo.DealExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from deal
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from deal
+    where deal_id = #{dealId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from deal
+    where deal_id = #{dealId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.cote.pojo.DealExample" >
+    delete from deal
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.cote.pojo.Deal" >
+    insert into deal (deal_id, deal_user_id, deal_shop_id, 
+      deal_time, deal_code)
+    values (#{dealId,jdbcType=INTEGER}, #{dealUserId,jdbcType=INTEGER}, #{dealShopId,jdbcType=INTEGER}, 
+      #{dealTime,jdbcType=TIMESTAMP}, #{dealCode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.cote.pojo.Deal" >
+    insert into deal
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="dealId != null" >
+        deal_id,
+      </if>
+      <if test="dealUserId != null" >
+        deal_user_id,
+      </if>
+      <if test="dealShopId != null" >
+        deal_shop_id,
+      </if>
+      <if test="dealTime != null" >
+        deal_time,
+      </if>
+      <if test="dealCode != null" >
+        deal_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="dealId != null" >
+        #{dealId,jdbcType=INTEGER},
+      </if>
+      <if test="dealUserId != null" >
+        #{dealUserId,jdbcType=INTEGER},
+      </if>
+      <if test="dealShopId != null" >
+        #{dealShopId,jdbcType=INTEGER},
+      </if>
+      <if test="dealTime != null" >
+        #{dealTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dealCode != null" >
+        #{dealCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.cote.pojo.DealExample" resultType="java.lang.Integer" >
+    select count(*) from deal
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update deal
+    <set >
+      <if test="record.dealId != null" >
+        deal_id = #{record.dealId,jdbcType=INTEGER},
+      </if>
+      <if test="record.dealUserId != null" >
+        deal_user_id = #{record.dealUserId,jdbcType=INTEGER},
+      </if>
+      <if test="record.dealShopId != null" >
+        deal_shop_id = #{record.dealShopId,jdbcType=INTEGER},
+      </if>
+      <if test="record.dealTime != null" >
+        deal_time = #{record.dealTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dealCode != null" >
+        deal_code = #{record.dealCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update deal
+    set deal_id = #{record.dealId,jdbcType=INTEGER},
+      deal_user_id = #{record.dealUserId,jdbcType=INTEGER},
+      deal_shop_id = #{record.dealShopId,jdbcType=INTEGER},
+      deal_time = #{record.dealTime,jdbcType=TIMESTAMP},
+      deal_code = #{record.dealCode,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.cote.pojo.Deal" >
+    update deal
+    <set >
+      <if test="dealUserId != null" >
+        deal_user_id = #{dealUserId,jdbcType=INTEGER},
+      </if>
+      <if test="dealShopId != null" >
+        deal_shop_id = #{dealShopId,jdbcType=INTEGER},
+      </if>
+      <if test="dealTime != null" >
+        deal_time = #{dealTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dealCode != null" >
+        deal_code = #{dealCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where deal_id = #{dealId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.cote.pojo.Deal" >
+    update deal
+    set deal_user_id = #{dealUserId,jdbcType=INTEGER},
+      deal_shop_id = #{dealShopId,jdbcType=INTEGER},
+      deal_time = #{dealTime,jdbcType=TIMESTAMP},
+      deal_code = #{dealCode,jdbcType=VARCHAR}
+    where deal_id = #{dealId,jdbcType=INTEGER}
+  </update>
+</mapper>

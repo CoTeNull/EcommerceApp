@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <script src="js/jquery.fullPage.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="js/mainjs.js"></script>
+    <script src="js/JsMode.js"></script>
+    <link rel="stylesheet" href="css/maincss.css">
+    <style>
+      .five{
+          position: relative;
+          background: url("img/green.jpg");
+          background-size: 100% 100%;
+      }
+      .five_img{
+          transform: rotate(-10deg);
+          position: relative;
+          top:-50px;
+          left: -100px;
+          float: left;
+          width: 50%;
+          height: 100%;
+          /*background: red;*/
+          transition: all 2s;
+          opacity: 0.7;
+      }
+      .fivemove{
+          opacity: 1!important;
+      }
+      .fiveimgmove{
+          left: 130px;
+      }
+      .five_article{
+          opacity: 0;
+          padding-top: 6%;
+          padding-left:20px;
+          padding-right:120px;
+          float: left;
+          width: 50%;
+          height: 100%;
+          transition: all 2s;
+      }
+      .five_article h3{
+          font-family:楷体;
+          color: rgba(255, 255, 255, 0.76) !important;
+          font-size: 30px;
+      }
+      .five_article p{
+          font-family:楷体;
+          color: rgba(255, 255, 255, 0.76) !important;
+          font-size: 20px;
+      }
+        .five_img img{
+            width: 100%;
+            height: 80%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">跳蚤市场<span class="addressadd"> 展示大厅</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">首页<!--<span class="sr-only">(current)</span>--></a></li>
+                <li><a href="javascript:;">商品列表</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的跳蚤 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">个人信息</a></li>
+                        <li><a href="#">待处理消息</a></li>
+                        <li><a href="#">待处理订单</a></li>
+                        <li><a href="#">♥ 我的购物车 ♥</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="输入关键字查询">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">登陆</a></li>
+                        <li><a href="#">注销</a></li>
+                        <li><a href="#">切换账号</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="dowebok">
+	<div class="section first">
+        <div class="first_header">
+            <article>
+                <img src="img/logo1.png" alt="">
+                <img src="img/logo2.png" alt="">
+                <div><img src="img/service.png" alt=""><p>15080558801</p><br><p>联系方式时间:9am - 10pm</p></div>
+                <div>  <img src="img/shop.png" alt=""><p></p><p style="margin-left: 10px;">跳蚤购物</p></div>
+            </article>
+        </div>
+        <div class="lunBo">
+            <img src="img/tiaozhaolog.png" alt="">
+            <ul>
+                <li><img src="img/white.jpg" alt=""></li>
+                <li><img src="img/gg1.jpg" alt=""></li>
+                <li><img src="img/gg2.jpg" alt=""></li>
+                <li><img src="img/pink.jpg" alt=""></li>
+                <li><img src="img/gg3.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="lunBoFoot">
+            <ul>
+                <li class="hShow" data-num="1"></li>
+                <li data-num="2"></li>
+                <li data-num="3"></li>
+                <li data-num="4"></li>
+                <li data-num="5"></li>
+            </ul>
+        </div>
+	</div>
+	<div class="section sec">
+        <ul class="secul">
+            <li><a href="javascript:;"><img src="img/59520397N19e07576.jpg" alt=""><div><p>新品首发</p><p>二手 MOTO——抢先预订</p></div></a></li>
+            <li><a href="javascript:;"><img src="img/hg.jpg" alt=""><div><p>会逛</p><p>大牌二手包</p></div></a></li>
+            <li><a href="javascript:;"><img src="img/scdp.jpg" alt=""><div><p>奢侈大牌</p><p>享受奢侈生活</p></div></a></li>
+            <li><a href="javascript:;"><img src="img/znsh.png" alt=""><div><p>智能生活</p><p>智能潮货嗨购不停</p></div></a></li>
+            <li><a href="javascript:;"><img src="img/jdcs.jpg" alt=""><div><p>京东超市</p><p>牛奶低至满99减20</p></div></a></li>
+            <li><a href="javascript:;"><img src="img/btsc.jpg" alt=""><div><p>毕业清理</p><p>毕业班专卖店</p></div></a></li>
+            <li><a href="javascript:;"><img src="img/59520397N19e07576.jpg" alt=""><div><p>新品首发</p><p>享受极致生活</p></div></a></li>
+            <li><a href="javascript:;"><img src="img/sjstj.jpg" alt=""><div><p>设计精选</p><p>全校艺术高材生精选</p></div></a></li>
+            <li><a href="javascript:;"><img src="img/qqjh.jpg" alt=""><div><p>全球尖货</p><p>全校自营好货</p></div></a></li>
+        </ul>
+	</div>
+	<div class="section thre">
+        <div class="main">
+            <ul>
+                <li>
+                    <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="img/logo1.png" alt="...">
+                            <div class="caption">
+                                <a href=""><h3>最新商品</h3></a>
+                                <p >毕业学长的健身器材</p>
+                                <p><a href="#" class="btn btn-primary" role="button">放入购物车</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="img/pink.jpg" alt="...">
+                            <div class="caption">
+                                <a href=""><h3>最新单车</h3></a>
+                                <p>很好用的二手单车</p>
+                                <p><a href="#" class="btn btn-primary" role="button">放入购物车</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="img/logo1.png" alt="...">
+                                <div class="caption">
+                                    <a href=""><h3>最新商品</h3></a>
+                                    <p >毕业学长的健身器材</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">放入购物车</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="img/pink.jpg" alt="...">
+                                <div class="caption">
+                                    <a href=""><h3>最新单车</h3></a>
+                                    <p>很好用的二手单车</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">放入购物车</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="img/logo1.png" alt="...">
+                                <div class="caption">
+                                    <a href=""><h3>最新商品</h3></a>
+                                    <p >毕业学长的健身器材</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">放入购物车</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="img/pink.jpg" alt="...">
+                                <div class="caption">
+                                    <a href=""><h3>最新单车</h3></a>
+                                    <p>很好用的二手单车</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">放入购物车</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="img/logo1.png" alt="...">
+                                <div class="caption">
+                                    <a href=""><h3>最新商品</h3></a>
+                                    <p >毕业学长的健身器材</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">放入购物车</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="img/pink.jpg" alt="...">
+                                <div class="caption">
+                                    <a href=""><h3>最新单车</h3></a>
+                                    <p>很好用的二手单车</p>
+                                    <p><a href="#" class="btn btn-primary" role="button">放入购物车</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <a href="javascript:;"><div class="main_right"><</div></a>
+        <a href="javascript:;"><div class="main_left">></div></a>
+        </div>
+	</div>
+	<div class="section four">
+        <div>
+            <div class="sdMain">
+                <div class="sdMain_son">
+                    <div class="fsdWrap">
+                        <div class="sdWrap">
+                            <div class="sdWrap_top"></div>
+                            <!--<div class="top_deng"></div>-->
+                            <img src="img/deng.png" alt="" class="top_deng">
+                            <div class="sdWrap_after">
+                                <ul>
+                                    <li><img src="img/logo1.png" alt=""></li>
+                                    <li><img src="img/logo2.png" alt=""></li>
+                                    <li><img src="img/piclogo.gif" alt=""></li>
+                                    <li><img src="img/logo1.png" alt=""></li>
+                                    <li><img src="img/logo2.png" alt=""></li>
+                                    <li><img src="img/piclogo.gif" alt=""></li>
+                                </ul>
+                            </div>
+                            <div class="sdWrap_left">
+                                <ul>
+                                    <li><img src="img/logo1.png" alt=""></li>
+                                    <li><img src="img/logo2.png" alt=""></li>
+                                    <li><img src="img/logo1.png" alt=""></li>
+                                    <li><img src="img/logo2.png" alt=""></li>
+                                </ul>
+                            </div>
+                            <div class="sdWrap_right">
+                                <ul>
+                                    <li><img src="img/logo1.png" alt=""></li>
+                                    <li><img src="img/logo2.png" alt=""></li>
+                                    <li><img src="img/logo1.png" alt=""></li>
+                                    <li><img src="img/logo2.png" alt=""></li>
+                                </ul>
+                            </div>
+                            <div class="sdWrap_bottom"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+	<div class="section five">
+        <div class="five_img">
+            <img src="img/tiaozhaobig.png" alt="">
+        </div>
+        <div class="five_article">
+            <h3>关于我们</h3>
+            <p>展示大厅开发中.....</p>
+            <h3>网站背景：</h3>
+            <p>部分高年级学长学姐即将毕业离校，有许多物品他们不再需要又还有价值，带回家去又不方便，若被二手市场以低价收购则会再被以高价回卖给学生造成浪费，另外还有很多同学冲动之下买的对自己无用的东西，为发掘其市场潜力，并给在校大学生提供一个实践创新的空间，以便适应这个市场时代和竞争时代，我们提供了一个互惠互利的跳蚤市场交易平台，进一步弘扬“奉献、友爱、互助、进步”的志愿者精神，给需要帮助的人做一些实实在在的事情，通过这次活动可以体现当代大学生的素质，用实际行动去为学校精神文明做出贡献，使得志愿者服务成为一个具有广泛影响和社会动员力的要点。</p>
+            <h3>活动目的：</h3>
+            <p>宣传节约光荣，营造厉行节约的社会氛围。我们要利用高效思想政治教育的有利条件，宣传建设节约型社会的重大意义，帮助大学生认清高消费浪费可耻帮助同学们清出对自己无用的物品，可使资源充分利用，向学生们宣传勤俭朴素的生活作风，有助于校园文明建设以及倡导节约型社会，活跃校园气氛，增强大学生自主创业能力，让学生们在交易中增强理财观念和人际沟通技巧，增强大家的诚信沟通意识，丰富同学们的大学生活，带领大家建立高尚的社会价值观。</p>
+        </div>
+	</div>
+</div>
+<script>
+</script>
+</body>
+</html>

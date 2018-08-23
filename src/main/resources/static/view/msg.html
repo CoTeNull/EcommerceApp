@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="shortcut icon" href="img/logo1.png"/>
+    <link rel="stylesheet" href="css/Font-Awesome-master/css/font-awesome.css">
+    <script src="js/JsMode.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #f4f4f4;
+        }
+        .addressadd{
+            font-size: 10px;
+            font-family:楷体;
+        }
+        article{
+            width: 1200px;
+            min-height: 10px;
+            background: red;
+            margin: 0 auto;
+        }
+        article main{
+            width: 100%;
+            background: white;
+            padding: 20px;
+        }
+        hr{
+            border: 1px solid #000;
+        }
+        .active_main{
+            width: 100%;
+            height: 480px;
+            padding: 10px;
+        }
+        .active_main>img{
+            float: left;
+            width: 400px;
+            height: 400px;
+        }
+        h1{
+            font-size: 20px;
+        }
+        .active_main>div{
+            width: 715px;
+            height: 480px;
+            float: left;
+            margin-left:20px;
+            text-align: left;
+        }
+        .active_price{
+            color: #00a1b5;
+            width: 500px;
+            height: 80px;
+            background: #f9f9f9;
+            line-height:80px;
+        }
+        .active_price span{
+            font-size: 20px;
+            float: left;
+            text-indent: 2em;
+        }
+        .active_price p{
+            float: left;
+            font-size: 30px;
+        }
+         .active_main label{
+             font-weight: 400;
+         }
+        .active_main>div>p{
+            padding: 10px;
+            color: #777782;
+            margin-top:10px;
+            height: 100px;
+            background: #f9f9f9;
+        }
+        .active_main a{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height:50px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            background: #ff3215;
+            margin-left: 100px;
+            box-shadow: 5px 5px 3px #2e2e2e;
+            transition: all 0.5s;
+        }
+        .active_main a:hover{
+            text-decoration: none;
+           transform: scale(1.1);
+        }
+        .active_main input[type=number]{
+            width: 30px;
+        }
+        .active_pl{
+            background: rgba(156, 235, 255, 0.31);
+            height: 500px;
+            border: 1px solid #000;
+        }
+        footer{
+            height: 20px;
+            width: 100%;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">跳蚤市场<span class="addressadd"> 商品详情</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="main.html">首页<!--<span class="sr-only">(current)</span>--></a></li>
+                <li><a href="shoplist.html">商品大厦</a></li>
+                <li><a href="shopall.html">商品仓库</a></li>
+                <li class="dropdown">
+                    <a href="myshop.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的跳蚤<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="myshop.html">个人信息</a></li>
+                        <li><a href="myshop.html">待处理消息</a></li>
+                        <li><a href="myshop.html">待处理订单</a></li>
+                        <li><a href="myshop.html">♥ 我的购物车 ♥</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="输入关键字查询">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <img src="img/userImg/toux.jpg" alt="" style="position: absolute; width: 40px;height: 40px;top:5px; left: -40px;border-radius: 50%">
+                    <script>
+                        if(getCookie("userImg")!="")
+                            $(".dropdown>img").attr("src",getCookie("userImg"));
+                    </script>
+                    <a  href="#" class="dropdown-toggle usershowname" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  User<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html" class="usernameif">登陆</a></li>
+                        <li><a href="index.html" id="endname">注销</a></li>
+                        <script>
+                            $("#endname").click(
+                                function () {
+                                    if(confirm("您确定要注销么？(注销后将失去浏览记录！)")){
+                                        removeCookie("showName");
+                                        removeCookie("userImg");
+                                        removeCookie("userName");
+                                        window.location.href="/";
+                                    }
+                                    else{
+                                        return false;
+                                    }
+                                }
+                            )
+                        </script>
+                        <li><a href="index.html">切换账号</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<article>
+   <main>
+     <div class="active_main">
+         <img src="img/commoditys/cool4.jpg" alt="">
+         <div>
+             <h1>联想Miix320 64G二合一平板电脑+5件套</h1>
+             <div  class="active_price">
+                 <span>¥</span><p>2599</p>
+             </div>
+             <p>2131321</p>
+             <span>运费：免运费 （订单满288免运费）</span><br><br>
+             <label>库存：</label> <input type="number" value="1" readonly><br><br><br>
+             <a href="javascript:;">加入购物车</a>
+         </div>
+     </div>
+       <hr>
+     <div class="active_pl">正在施工的评论区......</div>
+   </main>
+</article>
+<footer></footer>
+</body>
+</html>

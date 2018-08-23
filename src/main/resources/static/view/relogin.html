@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/pace.js"></script>
+    <link href="css/pace.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo1.png"/>
+    <link rel="stylesheet" href="css/Font-Awesome-master/css/font-awesome.css">
+    <link rel="stylesheet" href="css/zhuche/zhuche.css">
+    <script src="js/zhuche/zhuche.js"></script>
+    <script src="js/JsMode.js"></script>
+    <script src="js/gt.js"></script>
+</head>
+<body>
+<main>
+    <header>
+        <div>
+            <img src="img/logo1.png" alt="">
+            <h1>三明学院<span>“跳蚤市场”在线交易平台</span></h1>
+            <p><a href="main.html">关于我们</a></p>
+            <p><a href="main.html">官网首页</a></p>
+        </div>
+    </header>
+    <article>
+        <div>
+            <aside>
+                <ul>
+                    <li><img src="img/shop/thumbnail (1).png" alt=""></li>
+                    <li><img src="img/denglu/thumbnail (2).png" alt=""></li>
+                    <li><img src="img/denglu/thumbnail (3).png" alt=""></li>
+                    <li><img src="img/denglu/thumbnail.png" alt=""></li>
+                    <li><img src="img/denglu/blue.png" alt=""></li>
+                    <li><img src="img/denglu/thumbnail (4).png" alt=""></li>
+                </ul>
+            </aside>
+            <div class="article_header_footer">
+                    <ul>
+                        <li class="hShow" data-num="1"></li>
+                        <li data-num="2"></li>
+                        <li data-num="3"></li>
+                        <li data-num="4"></li>
+                        <li data-num="5"></li>
+                        <li data-num="6"></li>
+                    </ul>
+                </div>
+            <section>
+                <form action="" id="longin">
+                <h2>会 员 注 册</h2>
+                <p><i class="fa fa-user" aria-hidden="true" ></i><input type="text" id="name" autocomplete="off" value placeholder="请输入用户ID"></p>
+                <p><i class="fa fa-lock" aria-hidden="true" id="eye"></i><input type="password" id="pass" autocomplete="off" value placeholder="请输入密码"></p>
+                <p><i class="fa fa-lock" aria-hidden="true" id="eye2" ></i><input type="password" id="pass2" autocomplete="off" value placeholder="请再次输入密码"></p>
+                    <p id="nowlogin">正在加载验证码......</p>
+                <button id="zhuche" onclick="return false;">注 册</button>
+                <p><b>★</b>建议您使用<b> 学籍号 </b>注册</p>
+                    <span><a href="index.html">已有账号？返回登录</a></span>
+            </form>
+                <div id="massage">
+                    <h2>注 册 成 功</h2>
+                    <!--javaSpringMVC方式-->
+                <!--<form action="/Shop/user/registerImg/" method="post" enctype="multipart/form-data">-->
+                    <!--<input type="file" name="file" id="toux">-->
+                    <!--<input type="submit" value="提交" id="imgloup">-->
+                <!--</form>-->
+                    <form action="">
+                    <input type="file" name="file" id="toux">
+                    <input type="submit" value="提交" id="imgloup">
+                    </form>
+                    <img src="img/userImg/toux.jpg" alt="" id="touxt">
+                    <p>Hello！初次见面，来取个名字吧</p>
+                    <p><input type="text" id="showname" autocomplete="off" value placeholder="请创建您的昵称"></p>
+                    <p>点击头像,以此来上传您的个性头像</p>
+                    <a href="javascript:;" class="longin" id="lonin">点击确定保存信息</a>
+                </div>
+            </section>
+        </div>
+    </article>
+    <footer>
+        <div>
+            <p>福建省三明市三明学院</p>
+            <p>御心软件工作室版权所有 © 2015-2019  ·  增值电信业务经营许可证 B1.B2-200X018X  ·  闽ICP备170066X7号-6</p>
+            <p><img src="img/piclogo.gif" alt=""></p>
+        </div>
+    </footer>
+</main>
+</body>
+</html>

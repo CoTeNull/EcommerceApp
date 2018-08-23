@@ -6,10 +6,11 @@
     <groupId>cn.cote</groupId>
     <artifactId>shopapp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <!--<packaging>jar</packaging>-->
+    <packaging>war</packaging>
 
     <name>shopapp</name>
-    <description>ShoppApp2.0</description>
+    <description>ShopApp2.0</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -52,7 +53,17 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <!--json-->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20090211</version>
+        </dependency>
+        <!--热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
         <!--shiro包以及依赖包-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
@@ -69,8 +80,19 @@
             <artifactId>shiro-web</artifactId>
             <version>1.4.0</version>
         </dependency>
-
-
+       <!--引用外部tomcat-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <!-- 打war包时加入此项，告诉spring-boot tomcat相关jar包用外部的，不要打进去 -->
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
